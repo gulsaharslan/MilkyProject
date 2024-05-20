@@ -1,0 +1,47 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+@await Component.InvokeAsync("_AdminLayoutHeadComponentPartial")
+</head>
+<body>
+  <div class="container-scroller">
+    <!-- partial:../../partials/_navbar.html -->
+        @await Component.InvokeAsync("_AdminLayoutNavbarComponentPartial")
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:../../partials/_settings-panel.html -->
+      
+            @await Component.InvokeAsync("_AdminLayoutSidebarComponentPartial")
+
+      <!-- partial -->
+      <div class="main-panel">
+        @RenderBody()
+        <!-- content-wrapper ends -->
+        <!-- partial:../../partials/_footer.html -->
+                @await Component.InvokeAsync("_AdminLayoutFooterComponentPartial")
+
+        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+
+    <script src="~/skydashadmin/vendors/js/vendor.bundle.base.js"></script>
+    <script src="~/skydashadmin/js/off-canvas.js"></script>
+    <script src="~/skydashadmin/js/hoverable-collapse.js"></script>
+    <script src="~/skydashadmin/js/template.js"></script>
+    <script src="~/skydashadmin/js/settings.js"></script>
+    <script src="~/skydashadmin/js/todolist.js"></script>
+  <!-- endinject -->
+  <!-- Custom js for this page-->
+  <!-- End custom js for this page-->
+</body>
+
+</html>

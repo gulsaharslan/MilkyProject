@@ -1,0 +1,27 @@
+﻿@model MilkyProject.WebUI.Dtos.CategoryDto.UpdateCategoryDto
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Kategori Güncelle</h4>
+
+            <form class="forms-sample" method="post" action="/Category/UpdateCategory/">
+                <div class="form-group">
+                    
+                    <input type="text" class="form-control" asp-for="@Model.categoryId" name="categoryId" placeholder="Kategori Id" readonly/>
+                </div>
+                <div class="form-group">
+                    <label>Kategori Adı</label>
+                    <input type="text" class="form-control" asp-for="@Model.categoryName" name="CategoryName" placeholder="Kategori Adı">
+                </div>
+                <button type="submit" class="btn btn-primary mr-2">Güncelle</button>
+                <a href="/Category/Index/" class="btn btn-light">İptal</a>
+            </form>
+        </div>
+    </div>
+</div>

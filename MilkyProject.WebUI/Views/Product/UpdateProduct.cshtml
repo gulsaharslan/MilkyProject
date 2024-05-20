@@ -1,0 +1,43 @@
+﻿@model MilkyProject.WebUI.Dtos.ProductDto.UpdateProductDto
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Ürün Güncelle</h4>
+
+            <form class="forms-sample" method="post" action="/Product/UpdateProduct/">
+                <div class="form-group">
+
+                    <input type="text" class="form-control" asp-for="@Model.productId" name="productId" placeholder="Ürün Id" readonly />
+                </div>
+                <div class="form-group">
+                    <label>Ürün Adı</label>
+                    <input type="text" class="form-control" asp-for="@Model.productName" name="productName" placeholder="Ürün Adı">
+                </div>
+                <div class="form-group">
+                    <label>Eski Fiyat</label>
+                    <input type="text" class="form-control" asp-for="@Model.oldPrice" name="oldPrice" placeholder="Eski Fiyat">
+                </div>
+                <div class="form-group">
+                    <label>Yeni Fiyat</label>
+                    <input type="text" class="form-control" asp-for="@Model.newPrice" name="newPrice" placeholder="Yeni Fiyat">
+                </div>
+                <div class="form-group">
+                    <label>Kategori</label>
+                    @Html.DropDownListFor(x => x.CategoryId, (List<SelectListItem>)ViewBag.CategoryList, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label>Ürün Görseli</label>
+                    <input type="text" class="form-control" asp-for="@Model.imageUrl" name="imageUrl" placeholder="Ürün Görseli">
+                </div>
+                <button type="submit" class="btn btn-primary mr-2">Güncelle</button>
+                <a href="/Product/ProductList/" class="btn btn-light">İptal</a>
+            </form>
+        </div>
+    </div>
+</div>
