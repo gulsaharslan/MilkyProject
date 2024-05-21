@@ -20,18 +20,6 @@ namespace MilkyProject.WebUI.Controllers
             _httpClientFactory = httpClientFactory;
         }
 
-        public async Task<IActionResult> Index()
-        {
-            var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync("https://localhost:7202/api/Product");
-            if (responseMessage.IsSuccessStatusCode)
-            {
-                var jsonData = await responseMessage.Content.ReadAsStringAsync();
-                var values = JsonConvert.DeserializeObject<List<ResultProductDto>>(jsonData);
-                return View(values);
-            }
-            return View();
-        }
 
         public async Task<IActionResult> ProductList()
         {
@@ -47,8 +35,22 @@ namespace MilkyProject.WebUI.Controllers
         }
 
         [HttpGet]
-        public IActionResult CreateProduct()
+        public async Task<IActionResult> CreateProduct()
         {
+            var client = _httpClientFactory.CreateClient();
+            var responseMessageCategory = await client.GetAsync("https://localhost:7202/api/Category");
+            if (responseMessageCategory.IsSuccessStatusCode)
+            {
+                var jsonDataCategory = await responseMessageCategory.Content.ReadAsStringAsync();
+                var valuesCategory = JsonConvert.DeserializeObject<List<ResultCategoryDto>>(jsonDataCategory);
+                List<SelectListItem> categoryList = (from x in valuesCategory
+                                                     select new SelectListItem
+                                                     {
+                                                         Text = x.categoryName,
+                                                         Value = x.categoryId.ToString()
+                                                     }).ToList();
+                ViewBag.CategoryList = categoryList;
+            }
             return View();
         }
 
@@ -63,7 +65,7 @@ namespace MilkyProject.WebUI.Controllers
             var responseMessage = await client.PostAsync("https://localhost:7202/api/Product", stringContent);
             if (responseMessage.IsSuccessStatusCode)
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("ProductList");
             }
             return View();
 
