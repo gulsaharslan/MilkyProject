@@ -1,4 +1,5 @@
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.OpenApi.Models;
 using MilkyProject.BusinessLayer.Abstract;
 using MilkyProject.BusinessLayer.Concrete;
 using MilkyProject.DataAccessLayer.Abstract;
@@ -71,6 +72,8 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+   
+
 }
 
 app.UseHttpsRedirection();

@@ -1,4 +1,6 @@
-﻿namespace MilkyProject.WebUI.Dtos.CategoryDtos
+﻿using MilkyProject.WebUI.Dtos.ProductDto;
+
+namespace MilkyProject.WebUI.Dtos.CategoryDtos
 {
     public class CreateCategoryDto
     {

@@ -1,0 +1,23 @@
+﻿@model MilkyProject.WebUI.Dtos.GalleryDto.CreateGalleryDto
+
+@{
+    ViewData["Title"] = "CreateGallery";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Görsel Ekle</h4>
+
+            <form class="forms-sample" method="post" action="/Gallery/CreateGallery/">
+                <div class="form-group">
+                    <label>Görsel</label>
+                    <input type="text" class="form-control" asp-for="@Model.imageUrl" name="imageUrl" placeholder="Görsel ekle">
+                </div>
+                <button type="submit" class="btn btn-primary mr-2">Kaydet</button>
+                <a href="/Gallery/GalleryList/" class="btn btn-light">İptal</a>
+            </form>
+        </div>
+    </div>
+</div>

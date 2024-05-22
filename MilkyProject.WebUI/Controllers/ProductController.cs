@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using MilkyProject.WebUI.Dtos;
 using MilkyProject.WebUI.Dtos.CategoryDto;
 using MilkyProject.WebUI.Dtos.CategoryDtos;
 using MilkyProject.WebUI.Dtos.ProductDto;

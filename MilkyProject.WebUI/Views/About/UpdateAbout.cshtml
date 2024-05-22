@@ -1,0 +1,47 @@
+﻿@model MilkyProject.WebUI.Dtos.AboutDto.UpdateAboutDto
+
+@{
+    ViewData["Title"] = "UpdateAbout";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Hakkımızda Güncelle</h4>
+
+            <form class="forms-sample" method="post" action="/About/UpdateAbout/">
+                <div class="form-group">
+
+                    <input type="text" class="form-control" asp-for="@Model.aboutId" name="aboutId" placeholder="Hakkımızda Id" readonly />
+                </div>
+                <div class="form-group">
+                    <label>Başlık</label>
+                    <input type="text" class="form-control" asp-for="@Model.title" name="title" placeholder="Başlık">
+                </div>
+                <div class="form-group">
+                    <label>Açıklama</label>
+                    <textarea class="form-control" asp-for="@Model.description" name="description" placeholder="Açıklama"> </textarea>
+                </div>
+                <div class="form-group">
+                    <label>Görsel 1</label>
+                    <input type="text" class="form-control" asp-for="@Model.imageUrl" name="imageUrl" placeholder="Görsel url ekleyiniz">
+                </div>
+                <div class="form-group">
+                    <label>Görsel 2</label>
+                    <input type="text" class="form-control" asp-for="@Model.imageUrl2" name="imageUrl2" placeholder="Görsel url ekleyiniz">
+                </div>
+                <div class="form-group">
+                    <label>Görsel 3</label>
+                    <input type="text" class="form-control" asp-for="@Model.imageUrl3" name="imageUrl3" placeholder="Görsel url ekleyiniz">
+                </div>
+                <div class="form-group">
+                    <label>Görsel 4</label>
+                    <input type="text" class="form-control" asp-for="@Model.imageUrl4" name="imageUrl4" placeholder="Görsel url ekleyiniz">
+                </div>
+                <button type="submit" class="btn btn-primary mr-2">Güncelle</button>
+                <a href="/About/AboutList/" class="btn btn-light">İptal</a>
+            </form>
+        </div>
+    </div>
+</div>

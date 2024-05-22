@@ -1,10 +1,19 @@
-﻿@model List<MilkyProject.WebUI.Dtos.ProductDto.ResultProductDto>
-
+﻿@model List<MilkyProject.WebUI.Dtos.EmployeeDto.ResultEmployeeDto>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "EmployeeList";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+
+<style>
+    .square-image {
+        width: 100px !important;
+        height: 100px !important;
+        object-fit: cover !important;
+        border-radius: 0 !important;
+    }
+</style>
+
 
 <div class="main-panel">
     <div class="content-wrapper">
@@ -12,7 +21,7 @@
             <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Kategori Listesi</h4>
+                        <h4 class="card-title">Ekip Üyeleri</h4>
 
                         <div class="table-responsive pt-3">
                             <table class="table table-bordered">
@@ -21,7 +30,9 @@
 
                                     <tr>
                                         <th> #</th>
-                                        <th>Ürün Adı</th>
+                                        <th>Ad Soyad</th>
+                                        <th>Görev</th>
+                                        <th>Görsel</th>
                                         <th>İşlemler</th>
                                     </tr>
                                 </thead>
@@ -29,17 +40,21 @@
                                     @foreach (var item in Model)
                                     {
                                         <tr>
-                                            <td>@item.productId</td>
-                                            <td>@item.productName </td>
+                                            <td>@item.employeeId</td>
+                                            <td>@item.nameSurname </td>
+                                            <td>@item.job</td>
+                                            <td><img src="@item.imageUrl" class="square-image" alt="Image1" /></td>
                                             <td>
-                                                <a href="/Category/DeleteCategory/@item.productId" class="btn btn-danger">Sil</a>
-                                                <a href="/Category/UpdateCategory/@item.productId" class="btn btn-warning">Güncelle</a>
+                                                <a href="/Employee/DeleteEmployee/@item.employeeId" class="btn btn-danger">Sil</a>
+                                                <a href="/Employee/UpdateEmployee/@item.employeeId" class="btn btn-warning">Güncelle</a>
 
                                             </td>
                                         </tr>
                                     }
                                 </tbody>
                             </table>
+                            <a href="/Employee/CreateEmployee/" class="btn btn-info mt-2">Ekip Üyesi Ekle</a>
+
                         </div>
                     </div>
                 </div>
@@ -47,3 +62,6 @@
         </div>
     </div>
 </div>
+
+
+
