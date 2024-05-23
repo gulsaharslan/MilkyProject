@@ -33,6 +33,11 @@ namespace MilkyProject.BusinessLayer.Concrete
             return _socialMediaDal.GetById(id);
         }
 
+        public List<SocialMedia> TGetSocialMediaWithEmployee()
+        {
+            return _socialMediaDal.GetSocialMediaWithEmployee();
+        }
+
         public void TInsert(SocialMedia entity)
         {
            _socialMediaDal.Update(entity);

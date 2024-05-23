@@ -9,5 +9,6 @@ namespace MilkyProject.DataAccessLayer.Abstract
 {
     public interface ISocialMediaDal:IGenericDal<SocialMedia>
     {
+        List<SocialMedia> GetSocialMediaWithEmployee();
     }
 }

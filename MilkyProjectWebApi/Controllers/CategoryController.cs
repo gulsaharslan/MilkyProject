@@ -26,7 +26,7 @@ namespace MilkyProjectWebApi.Controllers
         public IActionResult CreateCategory(Category category)
         {
             _categoryService.TInsert(category);
-            return Ok("Kategori başarıyla eklendi");
+            return Ok("Başarıyla eklendi");
         }
 
         [HttpDelete]
@@ -34,7 +34,7 @@ namespace MilkyProjectWebApi.Controllers
         public IActionResult DeleteCategory(int id)
         {
             _categoryService.TDelete(id);
-            return Ok("Kategori başarıyla silindi");
+            return Ok("Başarıyla silindi");
         }
 
         [HttpPut("UpdateCategory")]
@@ -42,7 +42,7 @@ namespace MilkyProjectWebApi.Controllers
         public IActionResult UpdateCategory(Category category)
         {
             _categoryService.TUpdate(category);
-            return Ok("Kategori başarıyla güncellendi");
+            return Ok("Başarıyla güncellendi");
         }
 
         [HttpGet("GetCategory")]

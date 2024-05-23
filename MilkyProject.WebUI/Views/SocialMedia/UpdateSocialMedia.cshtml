@@ -1,0 +1,39 @@
+﻿@model MilkyProject.WebUI.Dtos.SocialMediaDto.UpdateSocialMediaDto
+@{
+    ViewData["Title"] = "UpdateSocialMedia";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Sosyal Medya Güncelle</h4>
+
+            <form class="forms-sample" method="post" action="/SocialMedia/UpdateSocialMedia/">
+                <div class="form-group">
+
+                    <input type="text" class="form-control" asp-for="@Model.socialMediaId" name="socialMediaId" placeholder="Sosyal Medya Id" readonly />
+                </div>
+                <div class="form-group">
+                    <label>Sosyal Medya</label>
+                    <input type="text" class="form-control" asp-for="@Model.name" name="name" placeholder="Sosyal Medya">
+                </div>
+                <div class="form-group">
+                    <label>Icon</label>
+                    <input type="text" class="form-control" asp-for="@Model.icon" name="icon" placeholder="Icon">
+                </div>
+                <div class="form-group">
+                    <label>Url</label>
+                    <input type="text" class="form-control" asp-for="@Model.url" name="url" placeholder="Url">
+                </div>
+                <div class="form-group">
+                    <label>Çalışan</label>
+                    @Html.DropDownListFor(x => x.employeeId, (List<SelectListItem>)ViewBag.employees,  new { @class = "form-control" })
+                </div>
+                
+                <button type="submit" class="btn btn-primary mr-2">Güncelle</button>
+                <a href="/SocialMedia/SocialMediaList/" class="btn btn-light">İptal</a>
+            </form>
+        </div>
+    </div>
+</div>
