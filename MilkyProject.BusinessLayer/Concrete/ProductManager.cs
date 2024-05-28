@@ -33,6 +33,11 @@ namespace MilkyProject.BusinessLayer.Concrete
             return _productDal.GetById(id);
         }
 
+        public int TGetProductCount()
+        {
+            return _productDal.GetProductCount();
+        }
+
         public List<Product> TGetProductsWithCategory()
         {
             return _productDal.GetProductsWithCategory();

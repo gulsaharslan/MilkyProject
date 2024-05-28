@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="row">
+            @await Component.InvokeAsync("_WeatherComponentPartial")
+
+            @await Component.InvokeAsync("_WidgetComponentPartial")
+        </div>
+        @await Component.InvokeAsync("_CategoryDetailComponentPartial")
+        @await Component.InvokeAsync("_StockComponentPartial")
+        <div class="row">
+            @await Component.InvokeAsync("_ChartComponentPartial")
+            @await Component.InvokeAsync("_TestimonialComponentPartial")
+        </div>
+        
+    </div>
+</div>
+
+
+
+

@@ -33,6 +33,11 @@ namespace MilkyProject.BusinessLayer.Concrete
             return _newsletterDal.GetById(id);
         }
 
+        public int TGetNewsletterCount()
+        {
+            return _newsletterDal.GetNewsletterCount();
+        }
+
         public void TInsert(Newsletter entity)
         {
             _newsletterDal.Insert(entity);

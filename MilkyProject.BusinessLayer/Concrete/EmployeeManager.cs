@@ -33,6 +33,11 @@ namespace MilkyProject.BusinessLayer.Concrete
            return _employeeDal.GetById(id);
         }
 
+        public int TGetEmployeeCount()
+        {
+            return _employeeDal.GetEmployeeCount(); 
+        }
+
         public void TInsert(Employee entity)
         {
            _employeeDal.Insert(entity);

@@ -1,0 +1,31 @@
+﻿@model MilkyProject.WebUI.Dtos.WhyUsDto.UpdateWhyUsDto
+
+@{
+    ViewData["Title"] = "UpdateWhyUs";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Neden Biz Güncelle</h4>
+
+            <form class="forms-sample" method="post" action="/WhyUs/UpdateWhyUs/">
+                <div class="form-group">
+
+                    <input type="text" class="form-control" asp-for="@Model.id" name="id" placeholder=" Id" readonly />
+                </div>
+                <div class="form-group">
+                    <label>Başlık</label>
+                    <input type="text" class="form-control" asp-for="@Model.title" name="title" placeholder="Başlık">
+                </div>
+                <div class="form-group">
+                    <label>Açıklama</label>
+                    <input type="text" class="form-control" asp-for="@Model.description" name="description" placeholder="Açıklama">
+                </div>
+                <button type="submit" class="btn btn-primary mr-2">Güncelle</button>
+                <a href="/WhyUs/WhyUsList/" class="btn btn-light">İptal</a>
+            </form>
+        </div>
+    </div>
+</div>

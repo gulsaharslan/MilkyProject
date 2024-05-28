@@ -1917,4 +1917,8 @@
     <Folder Include="wwwroot\skydashadmin\.git\refs\tags\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MilkyProject.BusinessLayer\MilkyProject.BusinessLayer.csproj" />
+  </ItemGroup>
+
 </Project>

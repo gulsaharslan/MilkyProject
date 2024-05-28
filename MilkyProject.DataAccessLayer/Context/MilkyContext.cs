@@ -29,5 +29,6 @@ namespace MilkyProject.DataAccessLayer.Context
         public DbSet<Statistic> Statistics { get; set; }
         public DbSet<Testimonial> Testimonials { get; set; }
         public DbSet<WhyUs> WhyUss { get; set; }
+        public DbSet<Message> Messages { get; set; }
     }
 }

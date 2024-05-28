@@ -17,6 +17,13 @@ namespace MilkyProject.DataAccessLayer.EntityFramework
         {
         }
 
+        public int GetProductCount()
+        {
+            var context = new MilkyContext();
+            var values = context.Products.Count();
+            return values;
+        }
+
         public List<Product> GetProductsWithCategory()
         {
             var context = new MilkyContext();

@@ -10,5 +10,6 @@ namespace MilkyProject.BusinessLayer.Abstract
     public interface IProductService : IGenericService<Product>
     {
         public List<Product> TGetProductsWithCategory();
+        int TGetProductCount();
     }
 }

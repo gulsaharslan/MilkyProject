@@ -1,0 +1,35 @@
+﻿
+<div class="col-md-6 stretch-card grid-margin">
+    <div class="card">
+        <div class="card-body">
+            <p class="card-title mb-0">Grafik</p>
+            <div class="row justify-content-center mt-10">
+                <div class="col-xl-6 col-md-8">
+                    <div class="card table-card">
+                        <div class="card-block">
+                            <script src="https://www.gstatic.com/charts/loader.js"></script>
+                            <div id="myChart2" style="width:100%; height:300px; margin-top:20px;"></div>
+                            <script>
+                                google.charts.load('current', { 'packages': ['corechart'] });
+                                google.charts.setOnLoadCallback(drawChart);
+                                function drawChart() {
+                                    // Set Data
+                                    const data = google.visualization.arrayToDataTable(@Html.Raw(Json.Serialize(ViewBag.CategoriesData)));
+                                    // Set Options
+                                    const options = {
+                                        title: 'Kategorilere Göre Ürün Sayıları',
+                                        chartArea: { width: '100%', height: '90%' }
+                                    };
+                                    // Draw
+                                    const chart = new google.visualization.PieChart(document.getElementById('myChart2'));
+                                    chart.draw(data, options);
+                                }
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

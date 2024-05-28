@@ -8,7 +8,7 @@
         public decimal NewPrice { get; set; }
         public string ImageUrl { get; set; }
         public bool Status { get; set; }
-        public int CategoryId { get; set; }
+        public int? CategoryId { get; set; }
         public Category category { get; set; }
 
         public class Category

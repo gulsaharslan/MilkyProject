@@ -9,5 +9,6 @@ namespace MilkyProject.DataAccessLayer.Abstract
 {
     public interface INewsletterDal:IGenericDal<Newsletter>
     {
+        int GetNewsletterCount();
     }
 }
