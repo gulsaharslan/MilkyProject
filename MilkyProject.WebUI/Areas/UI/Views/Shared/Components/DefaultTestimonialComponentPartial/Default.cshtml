@@ -1,0 +1,34 @@
+﻿@model List<MilkyProject.WebUI.Dtos.TestimonialDto.ResultTestimonialDto>
+
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+            <p class="section-title bg-white text-center text-primary px-3">Yorumlar</p>
+            <h1 class="mb-5">İnsanlar Milky için neler söylüyor?</h1>
+        </div>
+        <div class="row g-5 align-items-center">
+            <div class="col-lg-5 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="testimonial-img">
+                    @foreach(var item in Model)
+                    {
+                        <img class="img-fluid animated pulse infinite" src="@item.imageUrl" alt="">
+
+                    }
+                </div>
+            </div>
+            <div class="col-lg-7 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="owl-carousel testimonial-carousel">
+                    @foreach(var item in Model)
+                    {
+                    <div class="testimonial-item">
+                        <img class="img-fluid mb-3" src="@item.imageUrl" alt="">
+                        <p class="fs-5">@item.comment</p>
+                        <h5>@item.nameSurname</h5>
+                        <span class="text-primary">@item.profession</span>
+                    </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

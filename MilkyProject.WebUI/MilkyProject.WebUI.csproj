@@ -1912,6 +1912,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Areas\UI\Data\" />
+    <Folder Include="Areas\UI\Models\" />
     <Folder Include="wwwroot\skydashadmin\.git\objects\info\" />
     <Folder Include="wwwroot\skydashadmin\.git\objects\pack\" />
     <Folder Include="wwwroot\skydashadmin\.git\refs\tags\" />

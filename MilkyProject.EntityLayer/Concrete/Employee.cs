@@ -12,7 +12,7 @@ namespace MilkyProject.EntityLayer.Concrete
         public string? NameSurname { get; set; }
         public string Job { get; set; }
         public string ImageUrl { get; set; }
-        List<Employee>? Employees { get; set;}
+        List<SocialMedia>? SocialMedias { get; set;}
 
     }
 }
