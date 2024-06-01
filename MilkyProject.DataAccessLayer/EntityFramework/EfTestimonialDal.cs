@@ -15,5 +15,15 @@ namespace MilkyProject.DataAccessLayer.EntityFramework
         public EfTestimonialDal(MilkyContext context) : base(context)
         {
         }
+
+        public List<Testimonial> GetTestimonialLast3()
+        {
+            var context = new MilkyContext();
+            var value = context.Testimonials
+            .OrderByDescending(p => p.TestimonialId)
+            .Take(3)
+            .ToList();
+            return value;
+        }
     }
 }

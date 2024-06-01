@@ -15,5 +15,15 @@ namespace MilkyProject.DataAccessLayer.EntityFramework
         public EfServiceDal(MilkyContext context) : base(context)
         {
         }
+
+        public List<Service> GetServiceLast3()
+        {
+            var context = new MilkyContext();
+            var value = context.Services
+            .OrderByDescending(p => p.ServiceId)
+            .Take(3)
+            .ToList();
+            return value;
+        }
     }
 }

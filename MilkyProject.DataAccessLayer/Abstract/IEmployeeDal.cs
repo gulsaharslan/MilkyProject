@@ -10,5 +10,6 @@ namespace MilkyProject.DataAccessLayer.Abstract
     public interface IEmployeeDal:IGenericDal<Employee>
     {
         int GetEmployeeCount();
+        List<Employee> GetEmployeeLast3();
     }
 }

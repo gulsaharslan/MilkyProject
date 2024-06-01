@@ -33,6 +33,11 @@ namespace MilkyProject.BusinessLayer.Concrete
             return _serviceDal.GetById(id);
         }
 
+        public List<Service> TGetServiceLast3()
+        {
+            return _serviceDal.GetServiceLast3();   
+        }
+
         public void TInsert(Service entity)
         {
             _serviceDal.Insert(entity);

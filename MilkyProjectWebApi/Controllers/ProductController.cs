@@ -62,5 +62,12 @@ namespace MilkyProjectWebApi.Controllers
             return Ok(values);
         }
 
+        [HttpGet("GetProductsLast5")]
+
+        public IActionResult GetProductsLast5()
+        {
+            var values = _productService.TGetProductsLast5();
+            return Ok(values);
+        }
     }
 }

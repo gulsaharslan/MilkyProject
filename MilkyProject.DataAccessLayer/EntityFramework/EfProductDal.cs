@@ -24,6 +24,16 @@ namespace MilkyProject.DataAccessLayer.EntityFramework
             return values;
         }
 
+        public List<Product> GetProductsLast5()
+        {
+            var context = new MilkyContext();
+            var value = context.Products
+            .OrderByDescending(p => p.ProductId)
+            .Take(4)
+            .ToList();
+            return value;
+        }
+
         public List<Product> GetProductsWithCategory()
         {
             var context = new MilkyContext();

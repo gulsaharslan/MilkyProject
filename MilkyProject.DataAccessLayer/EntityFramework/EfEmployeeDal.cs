@@ -22,5 +22,15 @@ namespace MilkyProject.DataAccessLayer.EntityFramework
             var values = context.Employees.Count();
             return values;
         }
+
+        public List<Employee> GetEmployeeLast3()
+        {
+            var context = new MilkyContext();
+            var value = context.Employees
+            .OrderByDescending(p => p.EmployeeId)
+            .Take(3)
+            .ToList();
+            return value;
+        }
     }
 }

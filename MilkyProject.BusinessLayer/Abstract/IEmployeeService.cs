@@ -10,5 +10,6 @@ namespace MilkyProject.BusinessLayer.Abstract
     public interface IEmployeeService:IGenericService<Employee>
     {
         int TGetEmployeeCount();
+        List<Employee> TGetEmployeeLast3();
     }
 }

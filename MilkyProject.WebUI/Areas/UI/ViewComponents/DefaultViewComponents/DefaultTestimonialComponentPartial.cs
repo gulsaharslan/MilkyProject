@@ -16,7 +16,7 @@ namespace MilkyProject.WebUI.Areas.UI.ViewComponents.DefaultViewComponents
         public async Task<IViewComponentResult> InvokeAsync()
         {
             var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync("https://localhost:7202/api/Testimonial");
+            var responseMessage = await client.GetAsync("https://localhost:7202/api/Testimonial/GetTestimonialLast3");
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();

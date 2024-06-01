@@ -11,5 +11,6 @@ namespace MilkyProject.BusinessLayer.Abstract
     {
         public List<Product> TGetProductsWithCategory();
         int TGetProductCount();
+       public List<Product> TGetProductsLast5();
     }
 }

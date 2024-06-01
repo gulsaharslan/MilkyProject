@@ -28,5 +28,11 @@ namespace MilkyProjectWebApi.Controllers
             _testimonialService.TDelete(id);
             return Ok("Başarıyla silindi");
         }
+        [HttpGet("GetTestimonialLast3")]
+        public IActionResult GetTestimonialLast3()
+        {
+            var values = _testimonialService.TGetTestimonialLast3();
+            return Ok(values);
+        }
     }
 }

@@ -33,6 +33,11 @@ namespace MilkyProject.BusinessLayer.Concrete
             return _testimonialDal.GetById(id);
         }
 
+        public List<Testimonial> TGetTestimonialLast3()
+        {
+            return _testimonialDal.GetTestimonialLast3();
+        }
+
         public void TInsert(Testimonial entity)
         {
             _testimonialDal.Insert(entity);

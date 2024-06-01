@@ -52,5 +52,12 @@ namespace MilkyProjectWebApi.Controllers
             var value = _serviceService.TGetById(id);
             return Ok(value);
         }
+        [HttpGet("GetServiceLast3")]
+
+        public IActionResult GetServiceLast3()
+        {
+            var value = _serviceService.TGetServiceLast3();
+            return Ok(value);
+        }
     }
 }

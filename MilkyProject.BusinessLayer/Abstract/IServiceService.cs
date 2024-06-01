@@ -9,5 +9,6 @@ namespace MilkyProject.BusinessLayer.Abstract
 {
     public interface IServiceService:IGenericService<Service>
     {
+        List<Service> TGetServiceLast3();
     }
 }

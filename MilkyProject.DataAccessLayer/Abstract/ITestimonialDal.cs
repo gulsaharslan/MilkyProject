@@ -9,5 +9,6 @@ namespace MilkyProject.DataAccessLayer.Abstract
 {
     public interface ITestimonialDal:IGenericDal<Testimonial>
     {
+       public List<Testimonial> GetTestimonialLast3();
     }
 }

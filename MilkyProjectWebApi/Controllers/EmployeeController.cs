@@ -52,5 +52,11 @@ namespace MilkyProjectWebApi.Controllers
            var value= _employeeService.TGetById(id);
             return Ok(value);
         }
+        [HttpGet("GetEmployeeLast3")]
+        public IActionResult GetEmployeeLast3()
+        {
+            var value = _employeeService.TGetEmployeeLast3();
+            return Ok(value);
+        }
     }
 }

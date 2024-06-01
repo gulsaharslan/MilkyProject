@@ -9,5 +9,6 @@ namespace MilkyProject.BusinessLayer.Abstract
 {
     public interface ITestimonialService : IGenericService<Testimonial>
     {
+        List<Testimonial> TGetTestimonialLast3();
     }
 }
