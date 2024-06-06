@@ -1,0 +1,54 @@
+﻿@model List<MilkyProject.WebUI.Dtos.ContactDto.ResultContactDto>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="row">
+            <div class="col-lg-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Mesaj Listesi</h4>
+
+                        <div class="table-responsive pt-3">
+                            <table class="table table-bordered">
+                                <thead>
+
+
+                                    <tr>
+                                        <th> #</th>
+                                        <th>Ad Soyad</th>
+                                        <th>Email</th>
+                                        <th>Konu</th>
+                                        <th>Mesaj</th>
+                                        <th>Tarih</th>
+                                        <th>İşlemler</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>@item.contactId</td>
+                                            <td>@item.nameSurname</td>
+                                            <td>@item.email</td>
+                                            <td>@item.subject</td>
+                                            <td>@item.message</td>
+                                            <td>@item.date</td>
+                                            <td>
+                                                <a href="/Contact/DeleteContact/@item.contactId" class="btn btn-danger">Sil</a>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
