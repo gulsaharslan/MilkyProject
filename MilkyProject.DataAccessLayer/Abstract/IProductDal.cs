@@ -13,5 +13,6 @@ namespace MilkyProject.DataAccessLayer.Abstract
         int GetProductCount();
 
         List<Product> GetProductsLast5();
+
     }
 }

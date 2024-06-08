@@ -13,6 +13,7 @@ builder.Services.AddDbContext<MilkyContext>();
 builder.Services.AddControllersWithViews();
 builder.Services.AddHttpClient();
 builder.Services.AddScoped<ITestimonialService, TestimonialManager>();
+builder.Services.AddScoped<IProductService, ProductManager>();
 
 
 var app = builder.Build();
