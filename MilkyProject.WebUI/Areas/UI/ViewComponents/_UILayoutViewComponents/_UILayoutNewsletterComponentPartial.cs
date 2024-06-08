@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MilkyProject.BusinessLayer.Abstract;
+using MilkyProject.WebUI.Dtos.NewsletterDto;
 
 namespace MilkyProject.WebUI.Areas.UI.ViewComponents._UILayoutViewComponents
 {
@@ -7,7 +9,9 @@ namespace MilkyProject.WebUI.Areas.UI.ViewComponents._UILayoutViewComponents
     {
         public IViewComponentResult Invoke()
         {
-            return View();
+            
+            return View(new CreateNewsletterDto());
         }
+       
     }
 }

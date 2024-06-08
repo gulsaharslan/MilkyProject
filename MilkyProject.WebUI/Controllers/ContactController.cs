@@ -2,6 +2,7 @@
 using MilkyProject.WebUI.Dtos.CategoryDto;
 using MilkyProject.WebUI.Dtos.CategoryDtos;
 using MilkyProject.WebUI.Dtos.ContactDto;
+using MilkyProject.WebUI.Dtos.NewsletterDto;
 using Newtonsoft.Json;
 using System.Text;
 
@@ -40,6 +41,8 @@ namespace MilkyProject.WebUI.Controllers
             }
             return View();
         }
+
+        
 
     }
 }

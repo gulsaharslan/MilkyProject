@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MilkyProject.BusinessLayer.Abstract;
+using MilkyProject.EntityLayer.Concrete;
 
 namespace MilkyProjectWebApi.Controllers
 {
@@ -34,6 +35,13 @@ namespace MilkyProjectWebApi.Controllers
         {
             var values=_newsletterService.TGetById(id);
             return Ok(values);
+        }
+
+        [HttpPost]
+        public IActionResult CreateNewsletter(Newsletter newsletter)
+        {
+           _newsletterService.TInsert(newsletter);
+            return Ok("Başarıyla eklendi");
         }
     }
 }
