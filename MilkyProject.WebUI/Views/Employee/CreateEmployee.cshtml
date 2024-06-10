@@ -10,7 +10,7 @@
         <div class="card-body">
             <h4 class="card-title">Ekip Üyesi Ekle</h4>
 
-            <form class="forms-sample" method="post" action="/Employee/CreateEmployee/">
+            <form class="forms-sample" method="post" action="/Employee/CreateEmployee/ " enctype="multipart/form-data">
                 <div class="form-group">
                     <label>Ad Soyad</label>
                     <input type="text" class="form-control" asp-for="@Model.nameSurname" name="nameSurname" placeholder="Ad Soyad">
@@ -21,7 +21,7 @@
                 </div>
                 <div class="form-group">
                     <label>Görsel</label>
-                    <input type="text" class="form-control" asp-for="@Model.imageUrl" name="imageUrl" placeholder="Görsel">
+                    <input style="height:100%" type="file" class="form-control" id="ImageUrl" name="imageUrl" accept=".jpg,.png,.jpeg" />
                 </div>
                 <button type="submit" class="btn btn-primary mr-2">Kaydet</button>
                 <a href="/Employee/EmployeeList/" class="btn btn-light">İptal</a>

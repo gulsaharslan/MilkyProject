@@ -10,10 +10,10 @@
         <div class="card-body">
             <h4 class="card-title">Görsel Ekle</h4>
 
-            <form class="forms-sample" method="post" action="/Gallery/CreateGallery/">
+            <form class="forms-sample" method="post" action="/Gallery/CreateGallery/" enctype="multipart/form-data">
                 <div class="form-group">
                     <label>Görsel</label>
-                    <input type="text" class="form-control" asp-for="@Model.imageUrl" name="imageUrl" placeholder="Görsel ekle">
+                    <input style="height:100%" type="file" class="form-control" id="ImageUrl" name="imageUrl" accept=".jpg,.png,.jpeg" />
                 </div>
                 <button type="submit" class="btn btn-primary mr-2">Kaydet</button>
                 <a href="/Gallery/GalleryList/" class="btn btn-light">İptal</a>

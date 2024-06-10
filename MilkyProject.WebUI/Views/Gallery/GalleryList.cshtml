@@ -37,7 +37,7 @@
                                     {
                                         <tr>
                                             <td>@item.galleryId</td>
-                                            <td><img src="@item.imageUrl" class="square-image" /></td>
+                                            <td><img src="@Url.Content("~/upload/" + item.imageUrl)" class="square-image" /></td>
                                             <td>
                                                 <a href="/Gallery/DeleteGallery/@item.galleryId" class="btn btn-danger">Sil</a>
                                             </td>

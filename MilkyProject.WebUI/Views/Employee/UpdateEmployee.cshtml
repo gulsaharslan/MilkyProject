@@ -10,7 +10,7 @@
         <div class="card-body">
             <h4 class="card-title">Ekip Üyesi Güncelle</h4>
 
-            <form class="forms-sample" method="post" action="/Employee/UpdateEmployee/">
+            <form class="forms-sample" method="post" action="/Employee/UpdateEmployee/" enctype="multipart/form-data">
                 <div class="form-group">
 
                     <input type="text" class="form-control" asp-for="@Model.employeeId" name="employeeId" placeholder="Ekip Üyesi Id" readonly />
@@ -23,10 +23,19 @@
                     <label>Görev</label>
                     <input type="text" class="form-control" asp-for="@Model.job" name="job" placeholder="Görev">
                 </div>
-                <div class="form-group">
-                    <label>Görsel</label>
-                    <input type="text" class="form-control" asp-for="@Model.imageUrl" name="imageUrl" placeholder="Görsel">
+                <div class="row">
+                    <div class="col-md-4">
+                        <input type="hidden" name="oldImageUrl"  value="@Model.imageUrl"/>
+                        <img src="@Url.Content("~/upload/" + Model.imageUrl)" class="square-image" alt="Image1" style="width:200px;"/>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="form-group">
+                            <label>Görsel</label>
+                            <input style="height:100%" type="file" class="form-control" id="ImageUrl" name="imageUrl" accept=".jpg,.png,.jpeg" />
+                        </div>
+                    </div>
                 </div>
+               <br />
                 <button type="submit" class="btn btn-primary mr-2">Güncelle</button>
                 <a href="/Employee/EmployeeList/" class="btn btn-light">İptal</a>
             </form>

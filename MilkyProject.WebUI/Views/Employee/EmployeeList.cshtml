@@ -43,7 +43,7 @@
                                             <td>@item.employeeId</td>
                                             <td>@item.nameSurname </td>
                                             <td>@item.job</td>
-                                            <td><img src="@item.imageUrl" class="square-image" alt="Image1" /></td>
+                                            <td><img src="@Url.Content("~/upload/" + item.imageUrl)" class="square-image" alt="Image1" /></td>
                                             <td>
                                                 <a href="/Employee/DeleteEmployee/@item.employeeId" class="btn btn-danger">Sil</a>
                                                 <a href="/Employee/UpdateEmployee/@item.employeeId" class="btn btn-warning">Güncelle</a>

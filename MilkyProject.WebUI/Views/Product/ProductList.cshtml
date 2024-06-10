@@ -35,8 +35,8 @@
                                             <td>@item.ProductName </td>
                                             <td>@item.OldPrice </td>
                                             <td>@item.NewPrice </td>
-                                            <td>@item.category.CategoryName</td>
-                                            <td>@item.ImageUrl</td>
+                                            <td>@item.CategoryId</td>
+                                            <td><img src="@Url.Content("~/upload/" + item.ImageUrl)" class="square-image" /></td>
                                             <td>
                                                 <a href="/Product/DeleteProduct/@item.ProductId" class="btn btn-danger">Sil</a>
                                                 <a href="/Product/UpdateProduct/@item.ProductId" class="btn btn-warning">Güncelle</a>
@@ -45,6 +45,7 @@
                                     }
                                 </tbody>
                             </table>
+                            <br />
                             <a href="/Product/CreateProduct/" class="btn btn-info">Ürün Ekle</a>
                         </div>
                     </div>
